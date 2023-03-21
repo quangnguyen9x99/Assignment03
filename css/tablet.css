@@ -1,0 +1,76 @@
+/*Khi kích thước chiều rộng màn hình = 992px css sẽ đc sử dụng*/
+@media screen and (max-width: 992px) {
+  /*Ẩn avata đại diện*/
+  .adv-img {
+    display: none;
+  }
+  .navx3 {
+    display: none;
+  }
+  /*Định dạng lại vùng container tổng*/
+  section > .container {
+    max-width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    height: fit-content;
+  }
+  /*Vùng containter 1 được định dạng lại*/
+  .grid-container-1 {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 0px;
+    margin: auto;
+    padding: auto;
+  }
+  /*Vùng container 2 thu vào thành 2 cột*/
+  .grid-container-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    max-height: min-content;
+    gap: 50px;
+    max-width: 100%;
+    padding: 10px;
+    justify-content: center;
+  }
+  .grid-item-2 {
+    max-height: auto;
+  }
+  /*Vùng container 3 tbhu lại còn 2 cột*/
+  .grid-container-3 {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto auto;
+    gap: 0px;
+    max-width: 100%;
+    height: auto;
+  }
+  .grid-item-3 {
+    display: block;
+    max-width: 100%;
+  }
+  /*Hình ảnh co dãn theo tỷ lệ màn hình*/
+  .grid-item-4 img {
+    max-width: 100%;
+    height: auto;
+  }
+  /*Đinh dạng tiêu đề*/
+  .grid-item-4 h2 {
+    padding: 20px;
+    border: 1px solid rgb(206, 206, 206);
+    height: 100px;
+    max-width: 100%;
+    font-size: 14px;
+    margin-bottom: 0px;
+  }
+  /*Chỉnh lại định dạng bảng*/
+  table tr,
+  td {
+    width: 100%;
+    height: 450px;
+    border: 1px solid rgb(206, 206, 206);
+    border-collapse: collapse;
+    padding: 10px;
+  }
+}

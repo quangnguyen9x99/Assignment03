@@ -1,0 +1,307 @@
+* {
+  margin: 0px;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+header {
+  position: relative;
+  height: auto;
+  background-size: cover;
+}
+/*Kích thước và vị trí image banner*/
+.hero-image {
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+}
+/*Vị trí hero text*/
+.hero-text {
+  position: absolute;
+  text-align: center;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  color: white;
+}
+/*Set background màu xám sử dụng cho từng phần container nhất định*/
+.bg-grey {
+  background: #f7f7f7;
+}
+/*Container flex*/
+section > .container {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+/*Bỏ gạch chân thẻ a trong container navigation*/
+.container a {
+  border-left: 1px solid rgb(206, 206, 206);
+  border-right: 1px solid rgb(206, 206, 206);
+  text-align: center;
+  text-decoration: none;
+  padding: 14px 18px;
+  width: 100%;
+}
+/*Chia kích thước navigation*/
+.nav {
+  flex-basis: auto;
+  justify-content: center;
+  height: auto;
+}
+/*Vùng 1 mục tiêu và thông tin cá nhân*/
+.grid-container-1 {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 0px;
+}
+/*2 vùng grid con*/
+.grid-item-1 {
+  border: 1px solid hidden;
+  padding: 50px;
+  width: 100%;
+}
+/*DDingj dạng vùng mục tiêu nghề nghiệp*/
+#target {
+  background-color: #f7f7f7;
+  width: 100%;
+}
+/*Định dạng vùng thông tin cá nhân*/
+#personal-info {
+  background-color: #f1f1f1;
+  height: auto;
+  width: 100%;
+}
+/*Đổ màu và bo viền mốc thời gian hiện tại*/
+.cv-exp-time span {
+  border-radius: 20% / 80%;
+  color: white;
+  background-color: rgb(77, 152, 238);
+}
+/*Màu nền của icon phần infor*/
+i {
+  color: rgb(77, 152, 238);
+}
+/*DDingj dạng vùng 2 nội dung chính*/
+.grid-container-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  gap: 50px;
+  width: 100%;
+  padding: 10px;
+}
+/*Định dạng grid item*/
+.grid-item-2 {
+  display: grid;
+  border: 1px solid rgb(206, 206, 206);
+  padding: 20px;
+  text-align: left;
+  height: auto;
+}
+/*Định dạng vùng tiêu đề*/
+.title-exp,
+.title-edu,
+.title-act,
+.title-hobby,
+.title-lang,
+.title-skill {
+  display: flex;
+  font-size: 28px;
+  width: 100%;
+  height: 100px;
+}
+/*Tiêu đề H1*/
+.title-exp h1,
+.title-edu h1,
+.title-act h1,
+.title-hobby h1,
+.title-lang h1,
+.title-skill h1 {
+  display: flex;
+  width: 75%;
+  font-size: 28px;
+}
+/*Đổi màu icon và kích thước*/
+.title-exp i,
+.title-edu i,
+.title-act i,
+.title-hobby i,
+.title-lang i,
+.title-skill i {
+  display: flex;
+  width: 25%;
+  font-size: 40px;
+  color: gray;
+}
+/*Định dạng đoạn văn bản*/
+.cv-exp-time p,
+.cv-edu-time p,
+.cv-act-time p {
+  text-align: left;
+  padding-left: 40px;
+}
+/*Định dạng chi tiết các mục*/
+.cv-exp-details,
+.cv-edu-details,
+.cv-act-details {
+  display: flex;
+  max-width: 100%;
+  height: auto;
+  text-align: left;
+}
+/*Chấm tròn trước các mục*/
+.cv-exp-time ul li::marker,
+.cv-edu-time ul li::marker,
+.cv-act-time ul li::marker {
+  list-style: circle;
+  color: rgb(77, 152, 238);
+  font-size: 30px;
+  padding-left: 20px;
+}
+/*Bo tròn và đổ màu icon mục sở thích*/
+.cv-hobby i {
+  display: inline-block;
+  font-size: 30px;
+  border-radius: 50%;
+  text-align: center;
+  width: 70px;
+  height: 70px;
+  border: 1px solid rgb(77, 152, 238);
+  padding: 15px 15px 15px 10px;
+}
+/*Chú thích icon*/
+.cv-hobby p {
+  color: black;
+  font-size: 8px;
+  padding-top: 50px;
+}
+/*Mức độ kỹ năng và ngôn ngữ màu xanh*/
+.span-blue {
+  background: #199cdb;
+  display: inline-block;
+  height: 2px;
+  margin-right: 10px;
+  width: 45px;
+}
+/*Mức độ kỹ năng và ngôn ngữ màu xám*/
+.span-gray {
+  background: gray;
+  display: inline-block;
+  height: 2px;
+  margin-right: 10px;
+  width: 45px;
+}
+/*Định dạng vùng chứng chỉ và giải thưởng*/
+.grid-container-3 {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: auto;
+  gap: 0px;
+}
+/*Định dạng vùng con*/
+.grid-item-3 {
+  display: grid;
+  grid-template-columns: auto auto;
+  text-align: left;
+  padding: 10px;
+}
+.img-responsive img {
+  width: 300px;
+  height: 150px;
+}
+/*Kích thước font chữ*/
+.grid-item-3 strong {
+  font-size: 14px;
+}
+/*Tiêu đề chứng chỉ và dự án*/
+.title-ca,
+.title-pro {
+  font-size: 18px;
+  display: inline-block;
+  margin-left: 300px;
+  padding: 10px;
+}
+/*Định dạng vùng dự án*/
+.grid-container-4 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto auto auto auto;
+  gap: 30px;
+  width: 100%;
+  padding: 10px;
+  justify-content: center;
+}
+/*Định dạng vùng con*/
+.grid-item-4 {
+  display: grid;
+  grid-template-rows: auto auto auto auto;
+}
+/*Định dạng ảnh cho vùng con*/
+.grid-item-4 img {
+  width: 100%;
+  height: 400px;
+}
+/*Định dạng tiêu đề*/
+.grid-item-4 h2 {
+  padding: 20px;
+  border: 1px solid rgb(206, 206, 206);
+  height: auto;
+  width: 100%;
+  font-size: 16px;
+  margin-bottom: 0px;
+}
+.menu-mini {
+  display: flex;
+  padding: 15px;
+  border: 1px solid rgb(206, 206, 206);
+}
+/*Font và icon*/
+.menu-icon {
+  border-radius: 30% / 80%;
+  color: white;
+  background-color: rgb(77, 152, 238);
+  margin-left: 5px;
+  padding: 2px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+/*Bảng và nội dung*/
+table {
+  width: 100%;
+  height: 400px;
+  border: 1px solid rgb(206, 206, 206);
+  border-collapse: collapse;
+  padding: 10px;
+}
+/*Hàng*/
+tr {
+  max-width: 100%;
+}
+/*Cột*/
+td {
+  border-bottom: 1px solid rgb(206, 206, 206);
+  padding: 15px;
+}
+/*Phần footer liên hệ*/
+.container-footer {
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  font-size: 16px;
+  padding: 10px;
+}
+/*Bỏ gạch chân thẻ link và màu chữ*/
+.container-footer a {
+  text-decoration: none;
+  color: rgb(134, 128, 128);
+  justify-content: center;
+  text-align: center;
+}
+/*Phần thay thế hình ảnh nâng cao vùng navigation bar*/
+.adv-img {
+  position: absolute;
+  transform: scale(3);
+  border: 1px solid white;
+  border-radius: 50%;
+}

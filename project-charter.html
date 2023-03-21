@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Link with bootstrap icons-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
+    />
+    <title>Project Charter</title>
+    <!--Phần CSS-->
+    <style>
+      /*Định dạng toàn bộ mà hình thành thẻ grid*/
+      .grid-container {
+        display: grid;
+        gap: 8px;
+        background-color: blue;
+        padding: 10px;
+        grid-template-columns: 49% 25% 25%;
+        max-width: 100%;
+      }
+      /*Định dạng grid item*/
+      .grid-item {
+        background-color: whitesmoke;
+        text-align: center;
+        padding: 30px;
+        font-size: 16px;
+      }
+      /*kích thước phân vùng item 1*/
+      .item1 {
+        grid-column: 1;
+        grid-row: 1;
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto auto;
+      }
+      /*kích thước phân vùng item 2*/
+      .item2 {
+        grid-column: 1;
+        grid-row: 2;
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+      }
+      /*kích thước phân vùng item 3*/
+      .item3 {
+        grid-column: 2;
+        grid-row: 1;
+      }
+      /*kích thước phân vùng item 4*/
+      .item4 {
+        grid-column: 2;
+        grid-row: 2;
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto auto;
+      }
+      /*kích thước phân vùng item 5*/
+      .item5 {
+        grid-column: 3;
+        grid-row: 1 / span 2;
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto auto;
+      }
+      /*Đinh dạng tiêu đề*/
+      .title-charter {
+        width: 100%;
+        margin-top: 0px;
+        text-align: left;
+        color: blue;
+      }
+      /*Tăng kích thước icon*/
+      i {
+        font-size: 20px;
+      }
+      /*Chia kích thước chi tiết item*/
+      .item1-details {
+        display: grid;
+        grid-template-columns: 20% 80%;
+        grid-template-rows: auto;
+      }
+      /*Chia kích thước chi tiết item*/
+      .item2-details {
+        display: grid;
+        grid-template-columns: auto auto;
+        text-align: left;
+      }
+      /*Chia kích thước chi tiết item*/
+      .item3-details {
+        display: grid;
+        grid-template-columns: 20% 80%;
+        grid-template-rows: auto;
+      }
+      /*Chia kích thước chi tiết item*/
+      .item4-details {
+        display: grid;
+        grid-template-columns: 20% 80%;
+        grid-template-rows: auto;
+      }
+      /*Chia kích thước chi tiết item*/
+      .item5-details {
+        display: grid;
+        grid-template-columns: 20% 80%;
+        grid-template-rows: auto;
+      }
+      /*Tạo đường chấm cho item 5*/
+      span {
+        display: inline-block;
+        border-bottom: 1px dotted aqua;
+        width: 100%;
+      }
+      /*Style số thứ tự item 5*/
+      #number-list {
+        background-color: rgb(119, 84, 245);
+        border: 1px solid black;
+        color: white;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        padding-top: 11px;
+      }
+      /*Kích thước amnf hình tablet*/
+      @media screen and (max-width: 992px) {
+        .grid-container {
+          display: block;
+          gap: 10px;
+          background-color: blue;
+          padding: 10px;
+          grid-template-columns: 100%;
+          grid-template-rows: auto;
+          max-width: 100%;
+        }
+        /*Định dạng grid item*/
+        .grid-item {
+          background-color: whitesmoke;
+          border: 5px solid blue;
+        }
+        /*kích thước phân vùng item 1-2-3-4-5*/
+        .item1,
+        .item2,
+        .item3,
+        .item4,
+        .item5 {
+          display: block;
+          grid-template-columns: auto;
+          grid-template-rows: auto;
+        }
+        /*Chia kích thước chi tiết item 1-2-3-4-5*/
+        .item1-details,
+        .item2-details,
+        .item3-details,
+        .item4-details,
+        .item5-details {
+          display: block;
+          grid-template-columns: 100%;
+          grid-template-rows: auto;
+        }
+        /*Đưa number style sang trái*/
+        .item5-number {
+          text-align: left;
+        }
+        /*Chỉnh lại vị trí number*/
+        #number-list {
+          width: 50px;
+          padding-left: 15px;
+        }
+      }
+      /*Kích thước amnf hình mobile*/
+      @media screen and (max-width: 600px) {
+        .grid-container {
+          display: block;
+          gap: 8px;
+          background-color: blue;
+          padding: 10px;
+          grid-template-columns: 100%;
+          grid-template-rows: auto;
+          max-width: 100%;
+        }
+        /*kích thước phân vùng item 1-2-3-4-5*/
+        .item1,
+        .item2,
+        .item3,
+        .item4,
+        .item5 {
+          display: grid;
+          grid-template-columns: auto;
+          grid-template-rows: auto;
+        }
+        /*Chia kích thước chi tiết item 1-2-3-4-5*/
+        .item1-details,
+        .item2-details,
+        .item3-details,
+        .item4-details,
+        .item5-details {
+          display: block;
+          grid-template-columns: 100%;
+          grid-template-rows: auto;
+        }
+        /*Đưa number style sang trái*/
+        .item5-number {
+          text-align: left;
+        }
+        /*Chỉnh lại vị trí number*/
+        #number-list {
+          width: 50px;
+          padding-left: 15px;
+        }
+      }
+    </style>
+    <!--Link bootstrap version 5.1.3-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <div class="grid-container">
+      <!--Phần grid Goals-->
+      <div class="grid-item item1">
+        <div class="title-charter">
+          <h3>Goals</h3>
+        </div>
+        <hr />
+        <div class="item1-details">
+          <div>
+            <i class="bi bi-flag"></i>
+          </div>
+          <div style="text-align: left">
+            <h5>Goal 1</h5>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit, lusto
+              error ipsa optio quibusdam.
+            </p>
+          </div>
+        </div>
+        <hr />
+        <div class="item1-details">
+          <div>
+            <i class="bi bi-flag"></i>
+          </div>
+          <div style="text-align: left">
+            <h5>Goal 2</h5>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit, lusto
+              error ipsa optio quibusdam.
+            </p>
+          </div>
+        </div>
+        <hr />
+        <div class="item1-details">
+          <div>
+            <i class="bi bi-flag"></i>
+          </div>
+          <div style="text-align: left">
+            <h5>Goal 3</h5>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit, lusto
+              error ipsa optio quibusdam.
+            </p>
+          </div>
+        </div>
+        <hr />
+      </div>
+      <!--Phần grid Scopes-->
+      <div class="grid-item item2">
+        <div class="title-charter">
+          <h3>Scopes</h3>
+        </div>
+        <hr />
+        <div class="item2-details">
+          <div style="padding-right: 60px">
+            <h5>IN</h5>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit, Cumque,
+              ilum.
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit, Cumque,
+              ilum.
+            </p>
+          </div>
+          <div style="padding-right: 60px">
+            <h5>OUT</h5>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit, Cumque,
+              ilum.
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit, Cumque,
+              ilum.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--Phần grid Team-->
+      <div class="grid-item item3">
+        <div class="title-charter">
+          <h3>Team</h3>
+        </div>
+        <hr />
+        <div class="item3-details">
+          <div>
+            <i class="bi bi-person-fill"></i>
+          </div>
+          <div style="text-align: left">
+            <h5>Member 01</h5>
+            <p>Name: ...</p>
+          </div>
+
+          <div>
+            <i class="bi bi-person-fill"></i>
+          </div>
+          <div style="text-align: left">
+            <h5>Member 02</h5>
+            <p>Name: ...</p>
+          </div>
+          <div>
+            <i class="bi bi-person-fill"></i>
+          </div>
+          <div style="text-align: left">
+            <h5>Member 03</h5>
+            <p>Name: ...</p>
+          </div>
+          <div>
+            <i class="bi bi-person-fill"></i>
+          </div>
+          <div style="text-align: left">
+            <h5>Member 04</h5>
+            <p>Name: ...</p>
+          </div>
+        </div>
+      </div>
+      <!--Phần grid Primary-->
+      <div class="grid-item item4">
+        <div class="title-charter">
+          <h3>Primary</h3>
+        </div>
+        <hr />
+        <div class="item4-details">
+          <div>
+            <i class="bi bi-question-circle-fill"></i>
+          </div>
+          <div style="text-align: left">
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit, tenetut
+              sint?
+            </p>
+          </div>
+          <div>
+            <i class="bi bi-question-circle-fill"></i>
+          </div>
+          <div style="text-align: left">
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit, tenetut
+              sint?
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--Phần grid Timeline-->
+      <div class="grid-item item5">
+        <div class="title-charter">
+          <h3>Timeline</h3>
+        </div>
+        <hr />
+        <div class="item5-details">
+          <div class="item5-number">
+            <span id="number-list">01</span>
+          </div>
+          <div style="text-align: left">
+            <h5>Project Start</h5>
+            <p>Lorem ipsum dolor sit amet.</p>
+            <span></span>
+          </div>
+
+          <div class="item5-number">
+            <span id="number-list">02</span>
+          </div>
+          <div style="text-align: left">
+            <h5>Project Date</h5>
+            <p>Lorem ipsum dolor sit amet.</p>
+            <span></span>
+          </div>
+
+          <div class="item5-number">
+            <span id="number-list">03</span>
+          </div>
+          <div style="text-align: left">
+            <h5>Project Date</h5>
+            <p>Lorem ipsum dolor sit amet.</p>
+            <span></span>
+          </div>
+
+          <div class="item5-number">
+            <span id="number-list">04</span>
+          </div>
+          <div style="text-align: left">
+            <h5>Project Date</h5>
+            <p>Lorem ipsum dolor sit amet.</p>
+            <span></span>
+          </div>
+
+          <div class="item5-number">
+            <span id="number-list">05</span>
+          </div>
+          <div style="text-align: left">
+            <h5>Project Date</h5>
+            <p>Lorem ipsum dolor sit amet.</p>
+            <span></span>
+          </div>
+
+          <div class="item5-number">
+            <span id="number-list">06</span>
+          </div>
+          <div style="text-align: left">
+            <h5>Project Date</h5>
+            <p>Lorem ipsum dolor sit amet.</p>
+            <span></span>
+          </div>
+
+          <div class="item5-number">
+            <span id="number-list">07</span>
+          </div>
+          <div style="text-align: left">
+            <h5>Project Date</h5>
+            <p>Lorem ipsum dolor sit amet.</p>
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
